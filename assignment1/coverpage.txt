@@ -1,0 +1,74 @@
+# CSE132 Assignment 1 Cover Page
+
+By submitting this assignment, you certify that you have read, understood, and
+complied with the CSE132 collaboration policy. You are also certifying that
+the following information is complete and truthful.
+
+
+## Basic Information
+
+Name: Kyle Cepeda
+Partner:
+Email Address: kcepeda@wustl.edu
+Lab Section: B
+
+List people who helped you on this assignment 
+(outside of TAs, instructors, or partners):
+
+List outside sources you used on this assignment
+(other than those linked in the writeup):
+
+Understanding bitwise tutorial:
+http://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301
+
+
+## Assignment Overview
+
+What challenged you about this assignment?
+A lot of things, primarily understanding the new terms like targets, makefiles,
+ and different types of files. Also, needing to have the correct formatting
+caused me a lot of problems, and the instructions weren't very clear for someone who doesn't know what "all" or "rm" or "target" means like myself. Thankfully I found a TA that understood the material and was able to help me with it.
+  Also, understanding bitwise operators was really tough, and I eventually found a helpful site on the internet for that, listed above.
+
+
+What did you learn during this assignment?
+
+I think I know what some terms in the Makefile are now, though I wouldn't feel confident making my own.
+I still don't fully understand targets or phony files. I also understand the how the bitwise functions work now, but using them to prove things was tough. 
+
+Were you unable to complete anything? Explain:
+
+At first, yes, but after getting help from some TA's and the internet, I was able to pass all of the tests using make test.
+
+
+Is there anything we should know about your work on this assignment:
+Nope. 
+
+
+## Assignment Questions
+
+1. Solve the following bitwise and boolean operations, assuming they are written in C and the numbers are `int`s.
+
+	a. 0 || 23 == 1  
+	b. 0 | 23 ==00010111 = 23 
+	c. 5 && 0 == 0
+	d. 5 & 3 == 00000001 = 1
+	e. !4 == 0
+	f. ~5 == 11111010 = -6
+	g. 7 >> 3 == 00000000 = 0
+	h. 3 ^ 5 == 00000110 = 6
+
+2. What is most negative number you can represent in a two's-complement 3-byte datatype?  Write your answer in terms of 2 to some power.
+ Since there are 8 bits to a byte, and each bit represents a power of 2,  with the last one determining positive or negative, the most negative number you can represent is - 2^23. 
+ Or in other words, the most negative number is equal to -s^(n-1), where n is the number of bits. 
+
+3. Explain in a couple of sentences the advantages of breaking your program into multiple files and using header files to declare functions.
+
+	This allows us to reuse parts of our code and also organize it into differnt files based on what it is used for.
+For example, we used manipFunctions.c to store all of the functions that manip used in one place. 
+Also, using headfiles allowed us to compile all parts of the program at once, instead of compiling each file individually when we want to run it.
+
+
+4. What is `make`'s implicit rule for compiling `.c` files into `.o` files?
+
+	$(CC) $(CFLAGS) -c manip.c
